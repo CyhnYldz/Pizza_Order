@@ -111,13 +111,34 @@ public class OrderMain {
                     for (int i=3;i<choices.size();i++)
                         extraSum+=ingPrice.get((choices.get(i))-1);
 
-                    double sum= typePrice.get((choices.get(0))-1)+doPrice.get((choices.get(2))-1)+extraSum
+                    double sum= (typePrice.get((choices.get(0))-1)+doPrice.get((choices.get(2))-1)+extraSum)
                             * sizePirceRatio.get((choices.get(1))-1);
                     System.out.print(sum+"TL\n");
 
                 }
 
                 if (systemChoice==3){
+
+                    System.out.println();
+                    System.out.print(typePizza.get((choices.get(0))-1)+ " ");
+                    System.out.print("("+sizePizza.get((choices.get(1))-1)+ ") ");
+                    System.out.print(doPizza.get((choices.get(2))-1)+ " ");
+                    System.out.println("\nEkstra Ingredience :");
+                    for (int i=3;i<choices.size();i++){
+                        System.out.print(ingPizza.get((choices.get(i))-1)+ " ");
+
+
+                    }
+                    System.out.print("\nTotal Price :");
+
+                    double extraSum=0;
+                    for (int i=3;i<choices.size();i++)
+                        extraSum+=ingPrice.get((choices.get(i))-1);
+
+                    double sum= (typePrice.get((choices.get(0))-1)+doPrice.get((choices.get(2))-1)+extraSum)
+                            * sizePirceRatio.get((choices.get(1))-1);
+                    System.out.print(sum+"TL\n");
+                    System.out.println();
                     System.out.println("Thank you for your order");
                 }
             }while(systemChoice!=3);
